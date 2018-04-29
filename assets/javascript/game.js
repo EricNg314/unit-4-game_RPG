@@ -44,6 +44,9 @@
 
 $(document).ready(function () {
     //========== Initialization Part 1 ===================================================//
+    var enmyPokeObj = ""; //set a player stats and opponent stats to empty objs of their own.
+    // then fill objects of given stats from object library
+    // for(var m in mario) playerStats[m]=mario[m];
     var enmyName = "";
     var enmyHp = 0;
     var enmyAtk = 0;
@@ -88,18 +91,56 @@ $(document).ready(function () {
         }
     };
 
-    var pokeUserObj = {
-        poke1: {
+    // var pokeUserObj = {
+    //     poke1: {
+    //         name: "Pikachu",
+    //         hp: 200,
+    //         atk: 2,
+    //     },
+    //     poke2: {
+    //         name: "Raichu",
+    //         hp: 300,
+    //         atk: 4,
+    //     },
+    // };
+
+    var pokeUserObj = [
+        {
             name: "Pikachu",
             hp: 200,
             atk: 2,
         },
-        poke2: {
+        {
             name: "Raichu",
             hp: 300,
             atk: 4,
         }
-    };
+    ];
+
+
+    var pokeUserObjAry = [pokeUserObj];
+    var pokeString = "";
+    // console.log(pokeUserObjAry);
+    console.log(pokeUserObjAry[0]);
+    for (var i = 0; i < pokeUserObj.length; i++) {
+        console.log(pokeUserObj[i]);
+        // console.log(pokeUserObjAry[i]);
+        // console.log("testing" + pokeUserObjAry.length);
+        // for(var j=1; j < pokeUserObjAry[0].length; j++){
+        //     var pokeDex = "poke" + j;
+        //     console.log("Hi");
+        //     console.log(pokeUserObjAry[0].pokeDex); 
+        // }
+    }
+
+    // poke1
+    // poke1.name
+    // poke1.name.pikachu
+    // poke2
+    // poke2.name
+    // poke2.name.raichu
+
+
 
     // console.log(pokeEnmy.poke1.atk);
 
@@ -116,16 +157,20 @@ $(document).ready(function () {
 
 
     $("body").on("click", ".pokeEnmyBag", function () {
-        if(enmyName === ""){
+        if (enmyName === "") {
             // var enmyObj = pokeEnmyObj;
             console.log(enmyObj);
-            if(this.id = "pokeEnmy1"){
+            if (this.id = "pokeEnmy1") {
                 // var enmySelected = enmyObj.poke1;
                 enmyName = pokeEnmyObj.poke1.name;
                 enmyHp = 0;
                 enmyAtk = 0;
             }
         }
+
+        // for(var i = 0; i < pokeUserObj.length; i++){
+        //     console.log(pokeUserObj[i]);
+        // }
 
         console.log(enmyName);
     });
