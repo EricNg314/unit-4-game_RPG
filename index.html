@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,24 +10,98 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="assets/javascript/game.js"></script>
 
     <title>Pokemon RPG Game</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+    <nav id="navBarID" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand mx-auto" href="#">
+            <h1>Pokemon Battle</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="align-right mr-sm-2" href="#">Help</a>
+    </nav>
 
 
+    <div class="container border">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="pokeEnmy">PokemonName</h4>
+                </div>
+                <div class="card-body pt-0">
+                    <h5 id="HpEnmy">HP:</h5>
+                    <h5 id="AtkEnmy">Atk:</h5>
+                    <h5>Switch:</h5>
+                    <img id="pokeEnmy1" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeEnmy2" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeEnmy3" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeEnmy4" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeEnmy5" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeEnmy6" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                </div>
+            </div>
+            <div class="card ml-auto">
+                <img id="pokeEnmyImg" class="card-img-top" src="http://via.placeholder.com/250x250" alt="Card image cap">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="card mr-auto">
+                <img id="pokeUserImg" class="card-img-top" src="http://via.placeholder.com/250x250" alt="Card image cap">
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="pokeUser">PokemonName2</h4>
+                </div>
+                <div class="card-body pt-0">
+                    <h5  id="HpUser">HP:</h5>
+                    <h5 id="AtkUser">Atk:</h5>
+                    <h5>Switch:</h5>
+                    <img id="pokeUser1" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeUser2" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeUser3" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeUser4" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeUser5" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                    <img id="pokeUser6" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+        <div class="row border">
+            <div class="card">
+                <div class="card-body pt-0">
+                    <h5 id="userHitEnmy">Pokemon2 damaged Pokemon1 X amount</h5>
+                    <h5 id="enmyHitUser">Pokemon1 damaged Pokemon2 X amount</h5>
+                </div>
+            </div>
+            <div class="card ml-auto">
+                <div id="atkBtn" class="card-body">
+                    <h4>AttackButton</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
+</body>
 
-
-  </body>
 </html>
