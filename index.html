@@ -43,7 +43,7 @@
     </nav>
 
 
-    <div class="container border">
+    <div id="primaryContainer" class="container">
         <div class="row">
             <div class="card">
                 <div class="card-body">
@@ -52,7 +52,7 @@
                 <div class="card-body pt-0">
                     <h5 id="HpEnmy">HP:</h5>
                     <h5 id="AtkEnmy">Atk:</h5>
-                    <h5>Switch:</h5>
+                    <h5>Enemy Pocket Monsters:</h5>
                     <img id="pokeEnmy1" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
                     <img id="pokeEnmy2" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
                     <img id="pokeEnmy3" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
@@ -61,13 +61,13 @@
                     <img id="pokeEnmy6" class="pokeEnmyBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
                 </div>
             </div>
-            <div class="card ml-auto">
+            <div class="ml-auto">
                 <img id="pokeEnmyImg" class="card-img-top" src="http://via.placeholder.com/250x250" alt="Card image cap">
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="card mr-auto">
+            <div class="mr-auto">
                 <img id="pokeUserImg" class="card-img-top" src="http://via.placeholder.com/250x250" alt="Card image cap">
             </div>
             <div class="card">
@@ -75,9 +75,9 @@
                     <h4 id="pokeUserName">PokemonName2</h4>
                 </div>
                 <div class="card-body pt-0">
-                    <h5  id="HpUser">HP:</h5>
+                    <h5 id="HpUser">HP:</h5>
                     <h5 id="AtkUser">Atk:</h5>
-                    <h5>Switch:</h5>
+                    <h5>Your Pocket Monsters:</h5>
                     <img id="pokeUser1" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
                     <img id="pokeUser2" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
                     <img id="pokeUser3" class="pokeUserBag" width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap">
@@ -87,17 +87,20 @@
                 </div>
             </div>
         </div>
-        <div class="row border">
-            <div class="card">
-                <div class="card-body pt-0">
-                    <h5 id="userHitEnmy">Pokemon2 damaged Pokemon1 X amount</h5>
-                    <h5 id="enmyHitUser">Pokemon1 damaged Pokemon2 X amount</h5>
+
+        <div id="innerContainer" class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="pt-0">
+                        <h5 id="userHitEnmy"></h5>
+                        <h5 id="enmyHitUser"></h5>
+                    </div>
                 </div>
-            </div>
-            <div class="card ml-auto">
-                <div  id="atkBtn" class="card-body">
-                    <h4>AttackButton</h4>
-                    <!-- <img width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap"> -->
+                <div id="atkBtnCard" class="card ml-auto">
+                    <div id="atkBtn" class="card-body">
+                        <h4>AttackButton</h4>
+                        <!-- <img width="75px" height="75px" src="http://via.placeholder.com/50x50" alt="Card image cap"> -->
+                    </div>
                 </div>
             </div>
         </div>

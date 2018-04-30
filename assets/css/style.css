@@ -1,3 +1,17 @@
-#navBarID{
-    
+#primaryContainer {
+    border: 3px solid;
+    border-color: gray;
+}
+
+#innerContainer {
+    border: 3px solid;
+    border-color: lightgray;
+}
+
+.card {
+    border-width: 3px;
+}
+
+#atkBtnCard {
+    float: right;
 }
