@@ -44,15 +44,16 @@
 
 $(document).ready(function () {
     //========== Initialization Part 1 ===================================================//
-    var enmyPokeObj = ""; //set a player stats and opponent stats to empty objs of their own.
+    var enmyPokeObjDisp = {}; //set a player stats and opponent stats to empty objs of their own.
     // then fill objects of given stats from object library
     // for(var m in mario) playerStats[m]=mario[m];
-    var enmyName = "";
-    var enmyHp = 0;
-    var enmyAtk = 0;
-    var userName = "";
-    var userHp = 0;
-    var userAtk = 0;
+    var userPokeObjDisp = {};
+    // var enmyName = "";
+    // var enmyHp = 0;
+    // var enmyAtk = 0;
+    // var userName = "";
+    // var userHp = 0;
+    // var userAtk = 0;
     var pokeEnmyImg = "";
     var pokeEnmyImgAlt = "";
     var pokeUserImg = "";
@@ -91,58 +92,31 @@ $(document).ready(function () {
         }
     };
 
-    // var pokeUserObj = {
-    //     poke1: {
-    //         name: "Pikachu",
-    //         hp: 200,
-    //         atk: 2,
-    //     },
-    //     poke2: {
-    //         name: "Raichu",
-    //         hp: 300,
-    //         atk: 4,
-    //     },
-    // };
-
-    var pokeUserObj = [
-        {
+    var pokeUserObj = {
+        poke1: {
             name: "Pikachu",
             hp: 200,
             atk: 2,
         },
-        {
+        poke2: {
             name: "Raichu",
             hp: 300,
             atk: 4,
-        }
-    ];
+        },
+    };
+    // pokeUserObj.poke1.name = 'Mewto';
 
+    // console.log(pokeUserObj.poke1.name)
 
-    var pokeUserObjAry = [pokeUserObj];
-    var pokeString = "";
-    // console.log(pokeUserObjAry);
-    console.log(pokeUserObjAry[0]);
-    for (var i = 0; i < pokeUserObj.length; i++) {
-        console.log(pokeUserObj[i]);
-        // console.log(pokeUserObjAry[i]);
-        // console.log("testing" + pokeUserObjAry.length);
-        // for(var j=1; j < pokeUserObjAry[0].length; j++){
-        //     var pokeDex = "poke" + j;
-        //     console.log("Hi");
-        //     console.log(pokeUserObjAry[0].pokeDex); 
-        // }
-    }
+    // for(var key in pokeUserObj){
+    //   pokeUserObj[key]['name'] = 'Mewto';
+    //   console.log(pokeUserObj[key])
+    //   console.log(key)
+    // }
 
-    // poke1
-    // poke1.name
-    // poke1.name.pikachu
-    // poke2
-    // poke2.name
-    // poke2.name.raichu
+    // console.log(pokeUserObj.poke1.name);
+    // console.log(pokeUserObj.poke2.name);
 
-
-
-    // console.log(pokeEnmy.poke1.atk);
 
     // how to loop through objects?
     // how to obtain their attribute names?
@@ -157,42 +131,99 @@ $(document).ready(function () {
 
 
     $("body").on("click", ".pokeEnmyBag", function () {
-        if (enmyName === "") {
-            // var enmyObj = pokeEnmyObj;
-            console.log(enmyObj);
-            if (this.id = "pokeEnmy1") {
-                // var enmySelected = enmyObj.poke1;
-                enmyName = pokeEnmyObj.poke1.name;
-                enmyHp = 0;
-                enmyAtk = 0;
-            }
+        console.log(enmyPokeObjDisp);
+        var objEmpty = true;
+        console.log(objEmpty)
+        for (var key in enmyPokeObjDisp) {
+            // console.log(enmyPokeObjDisp[key]);
+            objEmpty = false;
         }
 
-        // for(var i = 0; i < pokeUserObj.length; i++){
-        //     console.log(pokeUserObj[i]);
-        // }
-
-        console.log(enmyName);
+        if (objEmpty === true || enmyPokeObjDisp.hp === 0) {
+            // console.log("Yep it's blank");
+            if (this.id === "pokeEnmy1") {
+                console.log(this.id);
+                enmyPokeObjDisp = pokeEnmyObj.poke1;
+                // console.log(enmyPokeObjDisp)
+            } else if (this.id === "pokeEnmy2") {
+                enmyPokeObjDisp = pokeEnmyObj.poke2;
+                // console.log(enmyPokeObjDisp)
+            } else if (this.id === "pokeEnmy3") {
+                enmyPokeObjDisp = pokeEnmyObj.poke3;
+                // console.log(enmyPokeObjDisp)
+            } else if (this.id === "pokeEnmy4") {
+                enmyPokeObjDisp = pokeEnmyObj.poke4;
+                // console.log(enmyPokeObjDisp)
+            } else if (this.id === "pokeEnmy5") {
+                enmyPokeObjDisp = pokeEnmyObj.poke5;
+                // console.log(enmyPokeObjDisp)
+            } else if (this.id === "pokeEnmy6") {
+                enmyPokeObjDisp = pokeEnmyObj.poke6;
+                // console.log(enmyPokeObjDisp)
+            }
+        }
+        outputDisplay();
     });
 
     $("body").on("click", ".pokeUserBag", function () {
+        console.log(userPokeObjDisp);
+        var objEmpty = true;
+        console.log(objEmpty)
+        for (var key in userPokeObjDisp) {
+            // console.log(userPokeObjDisp[key]);
+            objEmpty = false;
+        }
 
-
-
+        if (objEmpty === true) {
+            // console.log("Yep it's blank");
+            if (this.id === "pokeUser1") {
+                userPokeObjDisp = pokeUserObj.poke1;
+            } else if (this.id === "pokeUser2") {
+                userPokeObjDisp = pokeUserObj.poke2;
+                // console.log(userPokeObjDisp);
+            } else if (this.id === "pokeUser3") {
+                userPokeObjDisp = pokeUserObj.poke3;
+                // console.log(userPokeObjDisp);
+            } else if (this.id === "pokeUser4") {
+                userPokeObjDisp = pokeUserObj.poke4;
+                // console.log(userPokeObjDisp);
+            } else if (this.id === "pokeUser5") {
+                userPokeObjDisp = pokeUserObj.poke5;
+                // console.log(userPokeObjDisp);
+            } else if (this.id === "pokeUser6") {
+                userPokeObjDisp = pokeUserObj.poke6;
+                // console.log(userPokeObjDisp);
+            }
+        }
+        outputDisplay();
     });
 
 
     $("body").on("click", "#atkBtn", function () {
-        if (userName != "") {
+        console.log("attack button clicked");
 
+        var objEmptyEnmy = true;
+        // console.log(objEmptyEnmy)
+        for (var key in enmyPokeObjDisp) {
+            // console.log(userPokeObjDisp[key]);
+            objEmptyEnmy = false;
+        }
+        console.log(objEmptyEnmy);
 
+        var objEmptyUser = true;
+        // console.log(objEmptyUser)
+        for (var key in userPokeObjDisp) {
+            // console.log(userPokeObjDisp[key]);
+            objEmptyUser = false;
+        }
+        console.log(objEmptyUser);
 
-
-
-
-
-
-
+        if (objEmptyEnmy === false && objEmptyUser === false) {
+            console.log("Kabooooom");
+            attack();
+            outputDisplay();
+        } else {
+            console.log("Please choose your pokemon and the wild pokemon you wish to fight.")
         }
 
 
@@ -203,7 +234,7 @@ $(document).ready(function () {
 
 
     function gameReset() {
-        pokeEnmyObj = {
+        pokeuserObj = {
             poke1: {
                 name: "Pidgey",
                 hp: 10,
@@ -251,19 +282,42 @@ $(document).ready(function () {
 
     };
 
+    function attack() {
+        if (enmyPokeObjDisp.hp > 0) {
+            enmyPokeObjDisp.hp = enmyPokeObjDisp.hp - userPokeObjDisp.atk;
+            userPokeObjDisp.atk = Math.ceil(userPokeObjDisp.atk * 1.3);
+            $("#userHitEnmy").text("PokeUser hits " + "PokeEnmy " + " for " + userPokeObjDisp.atk);
+            $("#enmyHitUser").text("");
+            if(enmyPokeObjDisp.hp <= 0 ){
+                enmyPokeObjDisp.hp = 0;
+                $("#userHitEnmy").text(enmyPokeObjDisp.name + " feints, " + userPokeObjDisp.name + " hits " + enmyPokeObjDisp.name + " for " + userPokeObjDisp.atk + ".");
+            }
+            console.log(enmyPokeObjDisp.hp)
+            if (enmyPokeObjDisp.hp > 0) {
+                userPokeObjDisp.hp = userPokeObjDisp.hp - enmyPokeObjDisp.atk;
+                console.log(userPokeObjDisp.hp)
+                $("#enmyHitUser").text("PokeEnmy hits " + "PokeUser " + " for " + enmyPokeObjDisp.atk);
+            } else {
+                enmyPokeObjDisp = {};
+            }
+        } else {
+            $("#userHitEnmy").text("Please choose another enemy.");
+        }
+    }
 
     function outputDisplay() {
         // $("#pokeEnmyImg").attr('src', pokeEnmyImg);
         // $("#pokeEnmyImg").attr('alt', pokeEnmyImgAlt);
-        $("#HpEnmy").text("HP: " + enmyHp);
-        $("#AtkEnmy").text("Atk: " + enmyAtk);
+        $("#pokeEnmyName").text(enmyPokeObjDisp.name);
+        $("#HpEnmy").text("HP: " + enmyPokeObjDisp.hp);
+        $("#AtkEnmy").text("Atk: " + enmyPokeObjDisp.atk);
 
-        $("#HpUser").text("HP: " + userHp);
-        $("#AtkUser").text("Atk: " + userAtk);
+        $("#pokeUserName").text(userPokeObjDisp.name);
+        $("#HpUser").text("HP: " + userPokeObjDisp.hp);
+        $("#AtkUser").text("Atk: " + userPokeObjDisp.atk);
         // $("#pokeUserImg").attr('src', pokeUserImg);
         // $("#pokeUserImg").attr('alt', pokeUserImgAlt);
 
-        $("#userHitEnmy").text("PokeUser hits " + "PokeEnmy " + " for " + userAtk);
-        $("#enmyHitUser").text("PokeEnmy hits " + "PokeUser " + " for " + enmyAtk);
+
     };
 });
